@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "mission_slug": "tiny-cli-task-list-01M3YZFS",
+  "mission_id": "01M3YZFSR36ZJKD94S9FVMR904",
+  "mission_branch": "kitty/mission-tiny-cli-task-list-01M3YZFS",
+  "target_branch": "my-first-mission",
+  "lanes": [
+    {
+      "lane_id": "lane-a",
+      "wp_ids": [
+        "WP01"
+      ],
+      "write_scope": [
+        "package.json",
+        "src/core.js",
+        "tests/core.test.js"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "legacy-cleanup",
+        "tracker-integration",
+        "workspace"
+      ],
+      "depends_on_lanes": [],
+      "parallel_group": 0
+    },
+    {
+      "lane_id": "lane-b",
+      "wp_ids": [
+        "WP02"
+      ],
+      "write_scope": [
+        "src/store.js",
+        "tests/store.test.js"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "legacy-cleanup",
+        "tracker-integration",
+        "workspace"
+      ],
+      "depends_on_lanes": [
+        "lane-a"
+      ],
+      "parallel_group": 1
+    },
+    {
+      "lane_id": "lane-c",
+      "wp_ids": [
+        "WP03"
+      ],
+      "write_scope": [
+        "src/cli.js",
+        "src/index.js",
+        "tests/cli.test.js"
+      ],
+      "predicted_surfaces": [
+        "api",
+        "tracker-integration",
+        "workspace"
+      ],
+      "depends_on_lanes": [
+        "lane-a",
+        "lane-b"
+      ],
+      "parallel_group": 2
+    }
+  ],
+  "computed_at": "2026-10-02T19:33:14.232666+00:00",
+  "computed_from": "dependency_graph+ownership",
+  "planning_artifact_wps": [],
+  "planning_commit_sha": "639ec44fbc5ed607d9beef969e72c19131747fdc"
+}

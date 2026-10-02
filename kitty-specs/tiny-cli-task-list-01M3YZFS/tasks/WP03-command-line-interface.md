@@ -10,7 +10,7 @@ requirement_refs:
 - FR-010
 planning_base_branch: my-first-mission
 merge_target_branch: my-first-mission
-branch_strategy: Planning artifacts were generated on my-first-mission; completed changes must merge back into my-first-mission.
+branch_strategy: Planning artifacts for this mission were generated on my-first-mission. During /spec-kitty.implement this WP may branch from a dependency-specific base, but completed changes must merge back into my-first-mission unless the human explicitly redirects the landing branch.
 subtasks:
 - T009
 - T010
