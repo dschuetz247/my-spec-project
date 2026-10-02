@@ -1,0 +1,17 @@
+project:
+  uuid: b558c985-2568-4672-972f-bdf9aeeacac9
+  slug: my-spec-project
+  node_id: 050a43a00cff
+  build_id: 9c0a5d6a-5914-5258-bccf-c9e6725e8e6c
+mission_type_activations:
+- software-dev
+- documentation
+- research
+- plan
+vcs:
+  type: git
+agents:
+  available:
+  - claude
+  auto_commit: true
+  lint_on_edit: false
