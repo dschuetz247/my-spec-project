@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TinyTasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="case">
+    <div class="bezel">
+      <div id="screen">
+        <header id="header"><span id="header-sys"></span><span id="header-sep">  |  </span><span id="header-user"></span></header>
+        <div class="screen-body">
+          <main id="terminal">
+            <div id="output" aria-live="polite"></div>
+            <div id="prompt-line">
+              <span class="ps1">&gt;</span>
+              <div class="field">
+                <span id="mirror" aria-hidden="true"></span>
+                <input id="cmd" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="command">
+              </div>
+            </div>
+          </main>
+          <div id="scrollbar" aria-hidden="true"><div id="thumb"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-footer">
+      <span class="logo">TinyTasks</span>
+      <div class="footer-right">
+        <span class="power-led"></span>
+        <!-- 5.25" floppy drive, closed; #drive-led flickers while output is pending -->
+        <svg class="drive" viewBox="0 0 240 64" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="239" height="63" rx="3" fill="#dacca3" stroke="#a4946a"/>
+          <rect id="drive-led" x="16" y="8" width="6" height="6" rx="0.8" stroke="#8f8261" stroke-width="0.6"/>
+          <rect x="52" y="10" width="136" height="48" rx="6" fill="#cdbf94" stroke="#b8a778"/>
+          <rect x="6" y="24" width="216" height="5" fill="#2f2a1f"/>
+          <path d="M115.5 16.5 L115.5 53.5 Q115.5 57.5 119.5 57.5 L120.5 57.5 Q124.5 57.5 124.5 53.5 L124.5 16.5 Z" fill="#e3d7b3" stroke="#a4946a"/>
+          <circle cx="120" cy="16.5" r="6.2" fill="#e3d7b3" stroke="#a4946a"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <input id="import-file" type="file" accept=".json,application/json" hidden>
+  <script src="app.js"></script>
+</body>
+</html>

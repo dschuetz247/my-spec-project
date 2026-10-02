@@ -1,0 +1,109 @@
+{
+  "mission_slug": "tiny-cli-task-list-01M3YZFS",
+  "mission_number": "",
+  "mission_type": "software-dev",
+  "overall_verdict": "pass",
+  "criteria": [
+    {
+      "criterion_id": "FR-001",
+      "description": "Add a task by description; prints confirmation with id and lists as not done",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js add tests; cli.test.js Story 1; acceptance-check FR-001 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-002",
+      "description": "Empty or whitespace-only description is rejected (exit 1, message, file byte-identical)",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js EMPTY_DESCRIPTION; cli.test.js blank add; acceptance-check FR-002 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-003",
+      "description": "Ids are unique and never reused, including after deleting the newest task across separate runs",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js id non-reuse; store.test.js counter survives save/load; cli.test.js Story 3; acceptance-check FR-003 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-004",
+      "description": "Complete marks the task done by id and the list shows it as done",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js complete; cli.test.js Story 2; acceptance-check FR-004 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-005",
+      "description": "Delete permanently removes the task by id",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js delete; cli.test.js Story 3; acceptance-check FR-005 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-006",
+      "description": "List shows id, done state and description; empty list prints No tasks.",
+      "proof_type": "automated_test",
+      "evidence": "cli.test.js list formatting and empty list; acceptance-check FR-006 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-007",
+      "description": "Unknown or non-numeric id gives a clear error, exit 1, list unchanged",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js NOT_FOUND/INVALID_ID; cli.test.js edge cases with byte equality; acceptance-check FR-007 (4/4); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-008",
+      "description": "Completing an already-done task reports it, exits 0 and does not write",
+      "proof_type": "automated_test",
+      "evidence": "core.test.js alreadyDone same-state; cli.test.js mtime unchanged; acceptance-check FR-008 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-009",
+      "description": "Tasks persist between runs; corrupt storage is never overwritten",
+      "proof_type": "automated_test",
+      "evidence": "store.test.js round trip, corrupt/zero-byte untouched; cli.test.js Story 4; acceptance-check FR-009 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    },
+    {
+      "criterion_id": "FR-010",
+      "description": "Each action prints a clear confirmation or error; usage errors exit 2 on stderr, help exits 0 on stdout",
+      "proof_type": "automated_test",
+      "evidence": "cli.test.js contract rows; acceptance-check FR-010 (2/2); full suite 47/47 pass (node --test, lane-c); independent reviewer APPROVE",
+      "pass_fail": "pass",
+      "verified_by": "claude (orchestrator independent acceptance run + reviewer-renata reviews)",
+      "verified_at": "2026-10-02T19:58:42.592Z",
+      "notes": "Verified against real CLI in separate processes; no placeholder remains"
+    }
+  ],
+  "negative_invariants": []
+}

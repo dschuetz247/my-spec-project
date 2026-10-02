@@ -1,0 +1,245 @@
+:root {
+  --fg: #33ff33;
+  --fg-dim: #1f9e1f;
+  --fg-bright: #b6ffb6;
+  --bg: #020a02;
+  --glow: 0 0 4px rgba(51, 255, 51, 0.45);
+  --font: "VT323", "Consolas", "Menlo", monospace;
+  /* VT323 characters are 0.4em wide, so 80 columns need 32em; 170px is the frame around them */
+  --screen-font: clamp(14px, calc((100vw - 170px) / 32), 22px);
+
+  --desk: #141412;
+  --case: #d6c79f;
+  --case-edge: #b09f72;
+  --bezel: #b9aa80;
+  --bezel-edge: #a4946a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--desk);
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* The computer case: bezel with the screen on top, logo / power light / drive below */
+.case {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 1100px);
+  height: 100%;
+  background: var(--case);
+  border: 1px solid var(--case-edge);
+  border-radius: 18px;
+  padding: 26px 34px 14px;
+}
+
+.bezel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  background: var(--bezel);
+  border: 1px solid var(--bezel-edge);
+  border-radius: 8px;
+  padding: 7px;
+}
+
+.case-footer {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+.logo {
+  font-family: "Consolas", "Menlo", monospace;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #9a8b62;
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.power-led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: 1px solid #6f7a4a;
+}
+.drive {
+  display: block;
+  width: 240px;
+  height: auto;
+}
+#drive-led { fill: #aaa89c; }
+#drive-led.on { fill: var(--fg); }
+
+/* The screen itself */
+#screen {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: var(--screen-font);
+  line-height: 1.25;
+  text-shadow: var(--glow);
+  border-radius: 10px / 8px;
+  padding: 12px 12px 12px 16px;
+}
+
+/* CRT scanlines: purely decorative, only on the screen, never intercepts clicks */
+#screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+#header {
+  flex: none;
+  color: var(--bg);
+  background: var(--fg);
+  text-shadow: none;
+  padding: 0 8px;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.screen-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+#terminal {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+#terminal::-webkit-scrollbar { display: none; }
+
+/* Vintage scrollbar: outlined box with an inset solid thumb; hidden while everything fits */
+#scrollbar {
+  position: relative;
+  flex: none;
+  width: 14px;
+  border: 1px solid var(--fg);
+  box-shadow: var(--glow);
+  visibility: hidden;
+}
+#scrollbar.visible { visibility: visible; }
+#thumb {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  background: var(--fg);
+}
+
+#output .line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-height: 1.25em;
+}
+#output .echo   { color: var(--fg-dim); }
+#output .dim    { color: var(--fg-dim); }
+#output .bright { color: var(--fg-bright); }
+#output .err    { color: var(--fg-bright); }
+
+#prompt-line {
+  display: flex;
+  gap: 0.5ch;
+}
+.ps1 { color: var(--fg-bright); }
+
+.field {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+/* The mirror shows the typed text plus a block cursor; the real input sits on top, invisible */
+#mirror {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+#cmd {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  font: inherit;
+  text-shadow: none;
+}
+
+.cursor {
+  background: var(--fg);
+  color: var(--bg);
+  text-shadow: none;
+  animation: blink 1s steps(1) infinite;
+}
+.field:not(:focus-within) .cursor {
+  animation: none;
+  background: transparent;
+  color: var(--fg);
+  outline: 1px solid var(--fg-dim);
+}
+
+@keyframes blink {
+  50% { background: transparent; color: var(--fg); }
+}
+
+/* 80 columns from 700px up, so a 22-character user name always fits in the header */
+@media (min-width: 700px) {
+  #header, #terminal { min-width: 80ch; }
+}
+
+/* Narrower: drop the 80-column minimum, put the user on its own header line */
+@media (max-width: 699.98px) {
+  #screen { font-size: 18px; }
+  #header { white-space: pre-wrap; }
+  #header-sep { display: none; }
+  #header-user { display: block; }
+}
+
+/* Phones: thinner frame, smaller drive, no logo */
+@media (max-width: 600px) {
+  body { padding: 6px; }
+  .case { border-radius: 12px; padding: 10px 10px 8px; }
+  .bezel { padding: 4px; border-radius: 6px; }
+  #screen { padding: 8px 8px 8px 10px; }
+  .case-footer { margin-top: 8px; justify-content: flex-end; }
+  .logo { display: none; }
+  .footer-right { gap: 10px; }
+  .drive { width: 150px; }
+}
