@@ -1,0 +1,116 @@
+{
+  "event_count": 21,
+  "last_event_id": "01M3Z377BHMA1RPFN8WBRSZWXS",
+  "materialized_at": "2026-10-02T19:59:50.641882+00:00",
+  "mission_number": "1",
+  "mission_slug": "tiny-cli-task-list-01M3YZFS",
+  "mission_type": "software-dev",
+  "summary": {
+    "approved": 0,
+    "blocked": 0,
+    "canceled": 0,
+    "claimed": 0,
+    "done": 3,
+    "for_review": 0,
+    "in_progress": 0,
+    "in_review": 0,
+    "planned": 0
+  },
+  "work_packages": {
+    "WP01": {
+      "actor": "merge",
+      "agent": "claude",
+      "agent_profile": "__resolved_profile_absent__",
+      "agent_profile_version": "__resolved_profile_version_absent__",
+      "force_count": 0,
+      "lane": "done",
+      "last_event_id": "01M3Z374W54WPS217S0BPJF5NG",
+      "last_transition_at": "2026-10-02T19:59:48.101012+00:00",
+      "model": "__resolved_model_absent__",
+      "notes": [
+        "Ready for review",
+        "Review passed: all WP01 acceptance criteria met; 14/14 node tests pass; exports, purity, immutability, id non-reuse, parseId/validateState verified independently"
+      ],
+      "provider": "__resolved_provider_absent__",
+      "review_result": {
+        "feedback_path": "C:\\repos\\my-spec-project\\kitty-specs\\tiny-cli-task-list-01M3YZFS\\tasks\\WP01-task-list-rules\\review-cycle-1.md",
+        "reference": "review-cycle://tiny-cli-task-list-01M3YZFS/WP01-task-list-rules/review-cycle-1.md",
+        "reviewer": "user",
+        "verdict": "approved"
+      },
+      "role": "reviewer",
+      "shell_pid": 30388,
+      "shell_pid_created_at": "1790970342.015129",
+      "subtasks": {
+        "T001": "done",
+        "T002": "done",
+        "T003": "done",
+        "T004": "done",
+        "T005": "done"
+      }
+    },
+    "WP02": {
+      "actor": "merge",
+      "agent": "claude",
+      "agent_profile": "__resolved_profile_absent__",
+      "agent_profile_version": "__resolved_profile_version_absent__",
+      "force_count": 0,
+      "lane": "done",
+      "last_event_id": "01M3Z37647WS10VXPHBGETX3W8",
+      "last_transition_at": "2026-10-02T19:59:49.384489+00:00",
+      "model": "__resolved_model_absent__",
+      "notes": [
+        "Ready for review",
+        "Review passed: WP02 acceptance criteria met; 28/28 node tests; atomic save, corrupt-file safety, id counter persistence, Windows overwrite verified independently"
+      ],
+      "provider": "__resolved_provider_absent__",
+      "review_result": {
+        "feedback_path": "C:\\repos\\my-spec-project\\kitty-specs\\tiny-cli-task-list-01M3YZFS\\tasks\\WP02-persistence\\review-cycle-1.md",
+        "reference": "review-cycle://tiny-cli-task-list-01M3YZFS/WP02-persistence/review-cycle-1.md",
+        "reviewer": "user",
+        "verdict": "approved"
+      },
+      "role": "reviewer",
+      "shell_pid": 4276,
+      "shell_pid_created_at": "1790970617.687919",
+      "subtasks": {
+        "T006": "done",
+        "T007": "done",
+        "T008": "done"
+      }
+    },
+    "WP03": {
+      "actor": "merge",
+      "agent": "claude",
+      "agent_profile": "__resolved_profile_absent__",
+      "agent_profile_version": "__resolved_profile_version_absent__",
+      "force_count": 0,
+      "lane": "done",
+      "last_event_id": "01M3Z377BHMA1RPFN8WBRSZWXS",
+      "last_transition_at": "2026-10-02T19:59:50.641882+00:00",
+      "model": "__resolved_model_absent__",
+      "notes": [
+        "Ready for review",
+        "Review passed: WP03 acceptance criteria met; 47/47 node tests; all contract rows, safety rules and call chain verified independently"
+      ],
+      "provider": "__resolved_provider_absent__",
+      "review_result": {
+        "feedback_path": "C:\\repos\\my-spec-project\\kitty-specs\\tiny-cli-task-list-01M3YZFS\\tasks\\WP03-command-line-interface\\review-cycle-1.md",
+        "reference": "review-cycle://tiny-cli-task-list-01M3YZFS/WP03-command-line-interface/review-cycle-1.md",
+        "reviewer": "user",
+        "verdict": "approved"
+      },
+      "role": "reviewer",
+      "shell_pid": 29548,
+      "shell_pid_created_at": "1790970913.5429006",
+      "subtasks": {
+        "T009": "done",
+        "T010": "done",
+        "T011": "done",
+        "T012": "done",
+        "T013": "done",
+        "T014": "done"
+      }
+    }
+  }
+}
