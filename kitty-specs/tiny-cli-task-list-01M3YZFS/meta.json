@@ -1,17 +1,29 @@
-{
-  "coordination_branch": "kitty/mission-tiny-cli-task-list-01M3YZFS",
-  "created_at": "2026-10-02T18:54:37.603821+00:00",
-  "flattened": false,
-  "friendly_name": "Tiny CLI Task List",
-  "mission_id": "01M3YZFSR36ZJKD94S9FVMR904",
-  "mission_number": null,
-  "mission_slug": "tiny-cli-task-list-01M3YZFS",
-  "mission_type": "software-dev",
-  "purpose_context": "Gives a person a very small terminal tool to track to-do items: add a task, mark it complete, and delete it. Intended as a deliberately tiny first mission.",
-  "purpose_tldr": "A minimal command-line task list with add, complete, and delete actions.",
-  "slug": "tiny-cli-task-list-01M3YZFS",
-  "target_branch": "my-first-mission",
-  "topology": "coord",
-  "vcs": "git",
-  "source_description": "Build a tiny command-line task list app with add, complete, and delete actions."
-}
+{
+  "acceptance_history": [
+    {
+      "acceptance_mode": "local",
+      "accepted_at": "2026-10-02T19:59:04.555137+00:00",
+      "accepted_by": "danie",
+      "accepted_from_commit": "2879774c262cd3ddb65e01ceee97d95719d381ff"
+    }
+  ],
+  "acceptance_mode": "local",
+  "accepted_at": "2026-10-02T19:59:04.555137+00:00",
+  "accepted_by": "danie",
+  "accepted_from_commit": "2879774c262cd3ddb65e01ceee97d95719d381ff",
+  "coordination_branch": "kitty/mission-tiny-cli-task-list-01M3YZFS",
+  "created_at": "2026-10-02T18:54:37.603821+00:00",
+  "flattened": false,
+  "friendly_name": "Tiny CLI Task List",
+  "mission_id": "01M3YZFSR36ZJKD94S9FVMR904",
+  "mission_number": null,
+  "mission_slug": "tiny-cli-task-list-01M3YZFS",
+  "mission_type": "software-dev",
+  "purpose_context": "Gives a person a very small terminal tool to track to-do items: add a task, mark it complete, and delete it. Intended as a deliberately tiny first mission.",
+  "purpose_tldr": "A minimal command-line task list with add, complete, and delete actions.",
+  "slug": "tiny-cli-task-list-01M3YZFS",
+  "source_description": "Build a tiny command-line task list app with add, complete, and delete actions.",
+  "target_branch": "my-first-mission",
+  "topology": "coord",
+  "vcs": "git"
+}
