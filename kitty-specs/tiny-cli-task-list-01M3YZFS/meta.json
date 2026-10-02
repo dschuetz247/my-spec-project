@@ -11,5 +11,7 @@
   "purpose_tldr": "A minimal command-line task list with add, complete, and delete actions.",
   "slug": "tiny-cli-task-list-01M3YZFS",
   "target_branch": "my-first-mission",
-  "topology": "coord"
+  "topology": "coord",
+  "vcs": "git",
+  "source_description": "Build a tiny command-line task list app with add, complete, and delete actions."
 }
