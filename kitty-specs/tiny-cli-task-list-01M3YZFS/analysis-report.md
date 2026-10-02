@@ -4,15 +4,15 @@ artifact_type: spec-kitty.analysis-report
 command: /spec-kitty.analyze
 mission_slug: tiny-cli-task-list-01M3YZFS
 mission_id: 01M3YZFSR36ZJKD94S9FVMR904
-generated_at: '2026-10-02T19:40:04.615015+00:00'
+generated_at: '2026-10-02T19:42:28.074584+00:00'
 analyzer_agent: unknown
 input_artifacts:
   spec.md:
     path: kitty-specs\tiny-cli-task-list-01M3YZFS\spec.md
-    sha256: 69ea7a18256b3e9a0e9a2bc16cdd02aba10b8c415741a7494e1482d5114c1886
+    sha256: c05dbe26eb963a440b35cf9e623f225aefa7c45fb3c6aaea81e3f405507cad2e
   plan.md:
     path: kitty-specs\tiny-cli-task-list-01M3YZFS\plan.md
-    sha256: f7083902f22a379518c6befca3e5fe311ebbfd458a41ce1f6504fe8e3a8b64ad
+    sha256: 16e04999fa02b166e1e52318617e300b112cc686fdef6de75bf3ee34a024a1a3
   tasks.md:
     path: kitty-specs\tiny-cli-task-list-01M3YZFS\tasks.md
     sha256: 3b53fa0ad4bf86932e60323adb697aa3efe5b40e5574b5aec4b67fbdb1285915
@@ -21,10 +21,10 @@ input_artifacts:
     sha256:
 verdict: ready
 issue_counts:
-  medium: 1
-  low: 4
-  critical: 0
   high: 0
+  critical: 0
+  low: 4
+  medium: 1
   info: 0
 findings:
 - id: F1
