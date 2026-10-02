@@ -3,9 +3,9 @@
 No `NEEDS CLARIFICATION` items remain. Decisions below record the reasoning for the choices in [plan.md](plan.md).
 
 ## Language and dependencies
-- **Decision**: Python 3.10+, standard library only.
-- **Rationale**: User-confirmed (decision `01M3Z15PXNPN95BC98061789YP`). Needs no install step and adds no supply-chain exposure.
-- **Alternatives considered**: Node.js without dependencies (equivalent, not chosen by the user).
+- **Decision**: Node.js 20+, built-in modules only (ES modules, `node:test` for tests).
+- **Rationale**: User-confirmed (decision `01M3Z1EKXDZD57XW5TXR3ZVRDH`). Needs no install step and adds no supply-chain exposure. Node.js v24.19.0 is already installed on the user's machine, whereas `python` there resolves only to the Microsoft Store shortcut.
+- **Alternatives considered**: Python 3 standard library only (initially chosen under decision `01M3Z15PXNPN95BC98061789YP`, then superseded by the user).
 
 ## Storage format
 - **Decision**: One JSON file with a task array and a `next_id` counter.
@@ -17,7 +17,7 @@ No `NEEDS CLARIFICATION` items remain. Decisions below record the reasoning for 
 - **Rationale**: Using "highest existing ID + 1" would reuse an ID after the newest task is deleted, violating FR-003.
 
 ## Atomic writes
-- **Decision**: Write to a temporary file in the same directory, then atomically replace the target.
+- **Decision**: Write to a temporary file in the same directory, then rename it over the target.
 - **Rationale**: Prevents half-written data on a crash and supports NFR-002.
 - **Alternatives considered**: Direct overwrite (risks truncation on failure).
 

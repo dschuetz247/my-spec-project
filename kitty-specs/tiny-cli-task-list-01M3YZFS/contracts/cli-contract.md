@@ -1,6 +1,6 @@
 # CLI Contract: tinytasks
 
-Invocation: `python -m tinytasks <action> [arguments]`
+Invocation: `node src/index.js <action> [arguments]`
 
 Success messages go to standard output; error messages go to standard error.
 
